@@ -11,8 +11,8 @@ require('./modules/core.object.classof');
 require('./modules/core.object.define');
 require('./modules/core.object.make');
 require('./modules/core.number.iterator');
-require('./modules/core.string.escape-html');
-require('./modules/core.string.unescape-html');
+require('./modules/core.string.escape-docs');
+require('./modules/core.string.unescape-docs');
 require('./modules/core.log');
 module.exports = require('./modules/$.core');
 },{"./modules/$.core":15,"./modules/core.delay":83,"./modules/core.dict":84,"./modules/core.function.part":85,"./modules/core.get-iterator":87,"./modules/core.get-iterator-method":86,"./modules/core.is-iterable":88,"./modules/core.log":89,"./modules/core.number.iterator":90,"./modules/core.object.classof":91,"./modules/core.object.define":92,"./modules/core.object.is-object":93,"./modules/core.object.make":94,"./modules/core.string.escape-html":95,"./modules/core.string.unescape-html":96,"./shim":200}],2:[function(require,module,exports){
@@ -1293,7 +1293,7 @@ module.exports = function(it, tag, stat){
 'use strict';
 var ctx                = require('./$.ctx')
   , invoke             = require('./$.invoke')
-  , html               = require('./$.html')
+  , html               = require('./$.docs')
   , cel                = require('./$.dom-create')
   , global             = require('./$.global')
   , process            = global.process
@@ -1712,7 +1712,7 @@ $def($def.P + $def.F, 'String', {unescapeHTML:  function unescapeHTML(){ return 
 var $                = require('./$')
   , SUPPORT_DESC     = require('./$.support-desc')
   , createDesc       = require('./$.property-desc')
-  , html             = require('./$.html')
+  , html             = require('./$.docs')
   , cel              = require('./$.dom-create')
   , has              = require('./$.has')
   , cof              = require('./$.cof')
@@ -1796,7 +1796,7 @@ var createDict = function(){
   html.appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
-  // html.removeChild(iframe);
+  // docs.removeChild(iframe);
   iframeDocument = iframe.contentWindow.document;
   iframeDocument.open();
   iframeDocument.write('<script>document.F=Object</script' + gt);
