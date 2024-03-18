@@ -1,5 +1,5 @@
 #waifu-toggle {
-  background-color: #fa0;
+  background-color: #0471b3e8;
   border-radius: 5px;
   bottom: 66px;
   color: #fff;
@@ -25,9 +25,9 @@
 #waifu {
   bottom: -1000px;
   /*left: 80%;*/
-  right: 0;
+  right: 28px;
   line-height: 0;
-  margin-bottom: -10px;
+  margin-bottom: -15px;
   position: fixed;
   transform: translateY(3px);
   transition: transform .3s ease-in-out, bottom 3s ease-in-out;
@@ -56,6 +56,8 @@
   transition: opacity 1s;
   width: 250px;
   word-break: break-all;
+  color: #0471b3e8;
+  /*#b30450e8*/
 }
 
 #waifu-tips.waifu-tips-active {
@@ -88,9 +90,9 @@
 #waifu-tool {
   color: #aaa;
   opacity: 0;
-  position: absolute;
-  right: 6%;
-  top: 95px;
+  position: relative;
+  left: 280px;
+  bottom: 210px;
   transition: opacity 1s;
   width: 44px;
   height: 250px;

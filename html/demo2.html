@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplayer</title>
+    <link rel="stylesheet" href="/musicPlayer/js/APlayer.min.css">
+</head>
+<body>
+  <div id="player">
+    <div>
+      <input id="musicId"/>
+      <button id="getMusic" onclick="getUrl()">确定</button>
+    </div>
+  </div>
+
+  <script src="/musicPlayer/js/APlayer.min.js"></script>
+  <script>
+    function getUrl() {
+      let id = document.getElementById("musicId").value;
+      console.log(id)
+      let url = "https://music.163.com/song/media/outer/url?id=" + id +".mp3";
+      fetch(url).then((res) =>
+              res.blob().then((blob) => {
+                var a = document.createElement('a');
+                var url = window.URL.createObjectURL(blob);
+                a.href = url;
+                a.download = name; // 下载名称
+                a.click();
+                window.URL.revokeObjectURL(url);
+              })
+      );
+    }
+    // player.add163(501329999)
+
+    //Aplayer Start
+    const ap = new APlayer({
+      container: document.getElementById('player'),
+      mini: false,
+      autoplay: false,
+      theme: '#FADFA3',
+      loop: 'all',
+      order: 'random',
+      preload: 'auto',
+      volume: 0.7,
+      mutex: true,
+      listFolded: true,
+      listMaxHeight: 90,
+      lrcType: 3,
+      fixed: false,
+      audio: [
+        {
+          name: '洛城',
+          artist: '薛之谦',
+          url: '../mp3/洛城/洛城.mp3',
+          cover: '../mp3/洛城/洛城.jpg',
+          lrc: '../mp3/洛城/洛城.lrc',
+          theme: '#ebd0c2'
+        }
+
+      ]
+    });
+    // {
+    //     name: 'diary',
+    //         artist: 'aaa',
+    //     url: '../mp3/diary/diary.mp3',
+    //     cover: '../mp3/diary/cover.jpg',
+    //     lrc: '[00:00.00]APlayer\n[00:04.01]is\n[00:08.02]amazing',
+    //     theme: '#ebd0c2'
+    // },
+    // {
+    //     name: '病态',
+    //         artist: '薛之谦',
+    //     url: '../mp3/bt/bt.mp3',
+    //     cover: '../mp3/bt/bt.jpg',
+    //     lrc: '[00:00.00]APlayer\n[00:04.01]is\n[00:08.02]amazing',
+    //     theme: '#ebd0c2'
+    // }
+  </script>
+</body>
+</html>

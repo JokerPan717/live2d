@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      background-image: url(bg2.jpg);
+      color: #fff;
+      font-size: 16px;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      background-size: cover;
+      background-position: 50% 0;
+      height: 100%;
+      text-align: center;
+    }
+    .app{
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>
+<div class="app"></div>
+
+<script src="../jquery.min.js"></script>
+<script type="text/javascript" src="jquery.ripples.js"></script>
+<script>
+  $(document).ready(function() {
+    $('body').ripples({
+      resolution: 512,
+      dropRadius: 20, //px
+      perturbance: 0.04,
+    });
+  })
+  //https://github.com/sirxemic/jquery.ripples
+</script>
+</body>
+</html>

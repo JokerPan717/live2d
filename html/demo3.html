@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cplayer</title>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="app2"></div>
+
+  <script src="/musicPlayer/js/cplayer.min.js"></script>
+  <script>
+    let player = new cplayer({
+      element: document.getElementById('app'),
+      zoomOutKana: true,
+      volume: 0.75,
+      dropDownMenuMode: 'bottom',
+      dark: true,
+      big: true,
+      playlist: [
+        {
+          src: '/musicPlayer/mp3/洛城/洛城.mp3',
+          poster: '/musicPlayer/mp3/洛城/洛城.jpg',
+          name: '洛城',
+          artist: '薛之谦',
+          lyric: '/musicPlayer/mp3/洛城/洛城.lrc',
+          sublyric: '无',
+          album: '尘'
+        }
+      ]
+    })
+    let player2 = new cplayer({
+        element: document.getElementById('app2'),
+        zoomOutKana: true,
+        volume: 0.75,
+        dropDownMenuMode: 'bottom',
+        dark: true,
+        big: true,
+        playlist: [
+            {
+                src: '/musicPlayer/mp3/video-1.mp4',
+                poster: '/musicPlayer/mp3/video-1.png',
+                name: 'ボーカロイドたちがただﾃｯﾃｰﾃﾚｯﾃｰするだけ',
+                artist: 'aaa',
+                type: 'video',
+                big: true,
+                dark: true
+            }
+        ]
+    })
+  </script>
+</body>
+</html>
