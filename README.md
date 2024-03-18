@@ -120,10 +120,6 @@ initWidget({
 
 看板娘上的按钮功能包括聊天、飞机大战、变装、拍照、更多、关闭。。。等等
 
-效果演示：
-
-![效果演示](images/demonstrate.mp4)
-
-演示地址：http://www.jokerpan.cn
+演示地址：[http://www.jokerpan.cn](https://jokerpan12.github.io/live2d/docs/demo.html)https://jokerpan12.github.io/live2d/docs/demo.html
 
 `持续更新模型中...`
